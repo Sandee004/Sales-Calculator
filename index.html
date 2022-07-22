@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="head">
@@ -57,12 +58,11 @@
                     </td>
 
                     <td>
-                        
                         <form id="erase3">
-                        <span id="ppl"></span>
+                            <span id="ppl"></span>
                         </form>
                     </td>
-                </tr>
+                </tr><br>
 
 
                 <tr>
@@ -73,8 +73,9 @@
                             /person
                         </span>
                     </td>
-                    <td><div>
-                        <span id="sum"></span>
+                    <td>
+                        <div>
+                            <span id="sum"></span>
                         </div>
                     </td>
                 </tr>
@@ -83,7 +84,7 @@
 
             <input type="button" onclick="reset()" class="reset" value="Reset">
             </form>
-        </div>
+        </div><br>
     </div>
 
 
@@ -95,19 +96,45 @@
    document.getElementById("erase1").reset();  
  }
 
-/*
-var button = $('.tip-button');
-
-button.on('click', function(){
-    button.removeClass('selected');
-    $(this).addClass('selected');
-});*/
 
 
-var person= document.getElementById('btn1');
-person.addEventListener("click", function(){
-    document.getElementById("erase2").innerText="5%"
-});
+
+
+      var ash1= document.getElementById('btn1');
+      ash1.addEventListener("click", function() {
+          document.getElementById("btn1").style.backgroundColor= "hsl(172, 67%, 45%)"
+      })
+      var ash2= document.getElementById('btn2');
+      ash2.addEventListener("click", function() {
+          document.getElementById("btn2").style.backgroundColor= "hsl(172, 67%, 45%)"
+      })
+      var ash3= document.getElementById('btn3');
+      ash3.addEventListener("click", function() {
+          document.getElementById("btn3").style.backgroundColor= "hsl(172, 67%, 45%)"
+      })
+      var ash4= document.getElementById('btn4');
+      ash4.addEventListener("click", function() {
+          document.getElementById("btn4").style.backgroundColor= "hsl(172, 67%, 45%)"
+      })
+      var ash5= document.getElementById('btn5');
+      ash5.addEventListener("click", function() {
+          document.getElementById("btn5").style.backgroundColor= "hsl(172, 67%, 45%)"
+      })
+   
+
+      $(function () {
+        $(".tip-button").click(function () {
+          $(".tip-button").prop("disabled", true);
+          $(this).prop("disabled", false).addClass("active");
+        });
+      });
+
+
+      var test= document.getElementById("btn1");
+      test.addEventListener("click", function (){
+        document.getElementById("erase3").innerText="5%"
+      });
+
 
 
     function calcsum() {
@@ -120,8 +147,5 @@ person.addEventListener("click", function(){
   }
   document.getElementById("sum").innerText = sum2.toFixed(2);
 }
-
-
-
     </script>
 </body>
