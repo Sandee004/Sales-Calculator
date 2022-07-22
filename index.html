@@ -61,7 +61,7 @@
                             <input maxlength="5" class="suminput3" oninput="calcsum()" id="value">
                         </form>
                     </td>
-                </tr><br>
+                </tr>
 
 
                 <tr>
@@ -82,7 +82,7 @@
 
             <input type="button" onclick="reset()" class="reset" value="Reset">
             </form>
-        </div><br>
+        </div>
     </div>
 
 
@@ -95,33 +95,12 @@
  }
 
 
+var button = $('.tip-button');
 
-
-
-      var ash1= document.getElementById('btn1');
-      ash1.addEventListener("click", function() {
-          document.getElementById("btn1").style.backgroundColor= "hsl(172, 67%, 45%)"
-      })
-      var ash2= document.getElementById('btn2');
-      ash2.addEventListener("click", function() {
-          document.getElementById("btn2").style.backgroundColor= "hsl(172, 67%, 45%)"
-      })
-      var ash3= document.getElementById('btn3');
-      ash3.addEventListener("click", function() {
-          document.getElementById("btn3").style.backgroundColor= "hsl(172, 67%, 45%)"
-      })
-      var ash4= document.getElementById('btn4');
-      ash4.addEventListener("click", function() {
-          document.getElementById("btn4").style.backgroundColor= "hsl(172, 67%, 45%)"
-      })
-      var ash5= document.getElementById('btn5');
-      ash5.addEventListener("click", function() {
-          document.getElementById("btn5").style.backgroundColor= "hsl(172, 67%, 45%)"
-      })
-   
-
-
-
+button.on('click', function(){
+    button.removeClass('selected');
+    $(this).addClass('selected');
+});
 
 
     function calcsum() {
@@ -137,5 +116,8 @@
   }
   document.getElementById("sum").innerText = sum3;
 }
+
+
+
     </script>
 </body>
