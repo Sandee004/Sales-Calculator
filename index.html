@@ -27,7 +27,7 @@
         <p class="select">
             Select Tip%
         </p>
-        <input id="btn1" type="button" class="tip-button" value="5%">
+        <input id="btn1" onclick="listener()" type="button" class="tip-button" value="5%">
         <input id="btn2" type="button" class="tip-button" value="10%"><br>
         <input id="btn3" type="button" class="tip-button" value="15%">
         <input id="btn4" type="button" class="tip-button" value="20%"><br>
@@ -57,8 +57,9 @@
                     </td>
 
                     <td>
+                        
                         <form id="erase3">
-                            <input maxlength="5" class="suminput3" oninput="calcsum()" id="value">
+                        <span id="ppl"></span>
                         </form>
                     </td>
                 </tr>
@@ -87,19 +88,25 @@
 
 
     <script>
-    alert("Hi there. Ensure to fill all the required with numbers only to ensure accuracy")
+    //alert("Hi there. Ensure to fill all the required with numbers only to ensure accuracy")
     
     
     function reset(){  
    document.getElementById("erase1").reset();  
  }
 
-
+/*
 var button = $('.tip-button');
 
 button.on('click', function(){
     button.removeClass('selected');
     $(this).addClass('selected');
+});*/
+
+
+var person= document.getElementById('btn1');
+person.addEventListener("click", function(){
+    document.getElementById("erase2").innerText="5%"
 });
 
 
@@ -111,10 +118,7 @@ button.on('click', function(){
   for (const inputEl of document.getElementsByClassName("suminput2")){
       sum2= sum / inputEl.value
   }
-  for (const inputEl of document.getElementsByClassName("suminput3")) {
-      sum3=parseInt(sum2)+ parseFloat(inputEl.value)
-  }
-  document.getElementById("sum").innerText = sum3;
+  document.getElementById("sum").innerText = sum2.toFixed(2);
 }
 
 
