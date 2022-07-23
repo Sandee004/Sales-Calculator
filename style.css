@@ -161,3 +161,17 @@ td{
     border-radius: 6px;
     margin-bottom: 30px;
 }
+.tip-button:active, .tip-button.selected{
+    background-color: red;
+}/*
+.tip-button:hover{
+    background-image: red;
+    animation-name: fuck;
+    animation-duration: 1000s;
+}
+@keyframes fuck{
+    100%{
+    background-color: red
+        
+    }
+}
